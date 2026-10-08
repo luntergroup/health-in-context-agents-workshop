@@ -1,0 +1,67 @@
+name: Package Skills
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'skills/**'
+      - '.github/workflows/package-skills.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'skills/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  package-skills:
+    name: Package Skills
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Package skills into zip files
+        run: |
+          mkdir -p dist
+          for skill_dir in skills/*; do
+            if [ -d "$skill_dir" ] && [ -f "$skill_dir/SKILL.md" ]; then
+              skill_name=$(basename "$skill_dir")
+              echo "==> Packaging $skill_name..."
+              (cd "$skill_dir" && zip -r -q "../../dist/${skill_name}.zip" * -x "*/.*" -x "*__pycache__*" -x "*.pyc")
+              echo "Contents of dist/${skill_name}.zip:"
+              unzip -l "dist/${skill_name}.zip"
+            fi
+          done
+          echo "==> Generated archives:"
+          ls -lh dist/
+
+      - name: Upload salary-calculator artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: salary-calculator
+          path: dist/salary-calculator.zip
+          if-no-files-found: error
+
+      - name: Upload make-gantt-chart artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: make-gantt-chart
+          path: dist/make-gantt-chart.zip
+          if-no-files-found: error
+
+      - name: Update latest release
+        uses: softprops/action-gh-release@v2
+        if: github.ref == 'refs/heads/main'
+        with:
+          tag_name: latest
+          name: Latest Skills
+          prerelease: false
+          files: |
+            dist/salary-calculator.zip
+            dist/make-gantt-chart.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
