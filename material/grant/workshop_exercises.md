@@ -6,7 +6,7 @@ Welcome to the grant writing session of the workshop!
 - Learn how to build an agent with skills in Microsoft Copilot.
 - Understand that agents are good at "changing representations" of content.
 
-Read the slides for this session [here](https://github.com/luntergroup/health-in-context-agents-workshop/blob/main/material/grant/grant_writing_slides.pdf).
+Read the slides for this session [here](../intro-slides/part_2_grants.pptx).
 ---
 
 ## 1. Set up

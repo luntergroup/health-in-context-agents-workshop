@@ -65,15 +65,17 @@ WP1 and WP3 can be placed back-to-back:
 |          |          | Task 2.2 |          |
 |----------|----------|----------|----------|
 
-## Quality assurance
+## Quality assurance checklist
 Before presenting your work to the user, do a quality control check.
-- Test the integrity of the SVG XML (i.e., there are no errors).
-- Validate the grid layout:
-   * Test that the coordinates of the task's rectangles are indeed multiples of the
-   minor unit (i.e., the chart is indeed a table/grid).
-- Check the serial work packages are indeed horizontally aligned.
-- Verify that the SVG XML correctly implemented the rendering recipe.
-- Focus on the chart. The rest of the non-visual details go in the grant application.
+- [ ] Validate the grid layout:
+   * [ ]Test that the coordinates of the task's rectangles are indeed multiples of the
+        minor unit (i.e., the chart is indeed a table/grid).
+   * [ ] Check the serial work packages are aligned horizontally (minimizing vertical space).
+- [ ] Focus on the chart. The rest of the non-visual details go in the grant application.
+- [ ] Ensure that the chart is entirely visible (and not clipped because it does not fit the
+   viewport).
+- [ ] Verify that the SVG XML correctly implemented the rendering recipe.
+- [ ] Test the integrity of the SVG XML (i.e., there are no errors).
 
 ## Assets
 The following files are here to guide the construction of the table:
