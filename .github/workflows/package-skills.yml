@@ -5,15 +5,15 @@ on:
     branches: [main]
     paths:
       - 'skills/**'
-      - 'material/grant/synthetic_grant_proposal.md'
-      - 'material/grant/synthetic_grant_proposal.css'
+      - 'material/grant/example_grant_proposal.md'
+      - 'material/grant/example_grant_proposal.css'
       - '.github/workflows/package-skills.yml'
   pull_request:
     branches: [main]
     paths:
       - 'skills/**'
-      - 'material/grant/synthetic_grant_proposal.md'
-      - 'material/grant/synthetic_grant_proposal.css'
+      - 'material/grant/example_grant_proposal.md'
+      - 'material/grant/example_grant_proposal.css'
       - '.github/workflows/package-skills.yml'
   workflow_dispatch:
 
@@ -58,22 +58,22 @@ jobs:
           path: dist/make-gantt-chart.zip
           if-no-files-found: error
 
-      - name: Build synthetic grant proposal PDF
+      - name: Build example grant proposal PDF
         run: |
           sudo apt-get update
           sudo apt-get install --yes pandoc weasyprint fonts-liberation
-          pandoc material/grant/synthetic_grant_proposal.md \
+          pandoc material/grant/example_grant_proposal.md \
             --from markdown+hard_line_breaks \
             --pdf-engine=weasyprint \
-            --css material/grant/synthetic_grant_proposal.css \
-            --output dist/synthetic_grant_proposal.pdf
-          ls -lh dist/synthetic_grant_proposal.pdf
+            --css material/grant/example_grant_proposal.css \
+            --output dist/example_grant_proposal.pdf
+          ls -lh dist/example_grant_proposal.pdf
 
-      - name: Upload synthetic grant proposal artifact
+      - name: Upload example grant proposal artifact
         uses: actions/upload-artifact@v4
         with:
-          name: synthetic-grant-proposal
-          path: dist/synthetic_grant_proposal.pdf
+          name: example-grant-proposal
+          path: dist/example_grant_proposal.pdf
           if-no-files-found: error
 
       - name: Update latest release
@@ -86,6 +86,6 @@ jobs:
           files: |
             dist/salary-calculator.zip
             dist/make-gantt-chart.zip
-            dist/synthetic_grant_proposal.pdf
+            dist/example_grant_proposal.pdf
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

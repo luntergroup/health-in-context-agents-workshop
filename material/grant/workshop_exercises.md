@@ -42,7 +42,7 @@ Calculating personnel costs for grants can be tricky: it involves nation-wide CA
 scales, periodic step increments (periodiek), inflation bumps, and institutional surcharges.
 Luckily, we've already added a Salary Calculator skill to our agent.
 
-We will use the synthetic/example research grant proposal text located in [synthetic_grant_proposal.pdf](https://github.com/luntergroup/health-in-context-agents-workshop/releases/latest/download/synthetic_grant_proposal.pdf).
+We will use the example grant proposal located in [example_grant_proposal.pdf](https://github.com/luntergroup/health-in-context-agents-workshop/releases/latest/download/example_grant_proposal.pdf).
 
 Take a peek inside the file to see what is written, before you continue with the next steps.
 

@@ -22,4 +22,4 @@ The workshop uses Microsoft Copilot. Follow along on the [participant pages](htt
 
 1. **Sample size and power.** Simulate power for a hypothetical two-arm trial, explore how assumptions change the result, and check one estimate against an analytical calculation. See [`material/sample-size/workshop_exercise.md`](material/sample-size/workshop_exercise.md).
 2. **Research and reproducibility.** Re-implement a published mortality model from a paper and public data, then extend it step by step and compare the choices with the published analysis. See [`material/reproducibility/`](material/reproducibility/).
-3. **Grant preparation.** Build a Copilot agent, give it skills for personnel costs and a project timeline, and use them on a synthetic grant proposal. See [`material/grant/workshop_exercises.md`](material/grant/workshop_exercises.md).
+3. **Grant preparation.** Build a Copilot agent, give it skills for personnel costs and a project timeline, and use them on an example grant proposal. See [`material/grant/workshop_exercises.md`](material/grant/workshop_exercises.md).
