@@ -20,6 +20,6 @@ No preparation is required—just bring your laptop.
 
 The workshop uses Microsoft Copilot. Follow along on the [participant pages](https://luntergroup.github.io/health-in-context-agents-workshop/). Source material is in [`material/`](material/).
 
-1. **Sample size and power.** Simulate power for a hypothetical two-arm trial, explore how assumptions change the result, and check one estimate against an analytical calculation. See [`material/sample-size/workshop_exercise.md`](material/sample-size/workshop_exercise.md).
+1. **Sample size and power.** Plot analytical power curves for a hypothetical two-arm trial and use follow-up prompts to explore how assumptions change the graph and required sample size. See [`material/sample-size/workshop_exercise.md`](material/sample-size/workshop_exercise.md).
 2. **Research and reproducibility.** Re-implement a published mortality model from a paper and public data, then extend it step by step and compare the choices with the published analysis. See [`material/reproducibility/`](material/reproducibility/).
 3. **Grant preparation.** Build a Copilot agent, give it skills for personnel costs and a project timeline, and use them on an example grant proposal. See [`material/grant/workshop_exercises.md`](material/grant/workshop_exercises.md).
